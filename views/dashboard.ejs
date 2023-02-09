@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .profile {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            min-height: auto;
+            min-width: 300px;
+            max-height: auto;
+            max-width: 300px;
+            padding: 2px 16px;
+            margin: auto;
+
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            min-height: auto;
+            min-width: 300px;
+            max-height: auto;
+            max-width: 300px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+            padding: 2px 16px;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <a href="">Log out</a>
+    <div class="profile">
+        <a href=""><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
+        <%= user.role %> <br>
+        <%= user.details.school %> <br>
+    </div><br>
+
+    <a href="">Enroll to a new course</a><br><br>
+
+    <div class="container">
+        <% user.courses.forEach(course => { %>
+            <div class="card">
+                <img style="max-width: 100%;" src="<%= course.image %>" alt="">
+                
+                <div style="padding: 10px;">
+                    <h3><%= course.name %></h3>
+                    <p>Category : <%= course.category %></p>
+                    <p>Duration : <%= course.duration %></p>
+                    <a href="course/details/<%=course.id%>">See Course</a>
+                </div>
+                
+            </div>
+        <% }) %>
+    </div>
+    
+    
+</body>
+</html>

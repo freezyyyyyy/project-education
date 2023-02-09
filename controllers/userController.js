@@ -7,6 +7,7 @@ class UserController {
     }
     static login(req, res) {
         res.render('login')
+
     }
     static registerStudent(req, res) {
         res.render('registrasiStudent')
@@ -59,6 +60,7 @@ class UserController {
         User.findByPk(id)
         .then(user => res.render('addCourse', {user}))
         .catch(e=>res.send(e))
+
     }
     static createCourse(req,res){
         const {id} = req.params;
@@ -67,7 +69,28 @@ class UserController {
         .then(()=> res.redirect(`/teacher/${id}`))
         .catch(e=>res.send(e))
     }
-  
+
+
+    static dashboard(req, res) {
+        User.findByPk(1, { include: ['courses', 'details'] })
+            .then(user => {
+                res.render('dashboard', { user });
+            }).catch(err => {
+                res.send(err);
+            })
+    }
+
+    static courseDetail(req, res) {
+        let { courseId } = req.params;
+
+        Course.findByPk(+courseId, { include: { all: true, nested: true } })
+            .then(course => {
+                // res.send(course)
+                res.render('courses', { course });
+            }).catch(err => {
+                res.send(err);
+            })
+    }
 }
 
 module.exports = UserController

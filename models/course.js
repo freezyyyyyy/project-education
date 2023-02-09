@@ -11,14 +11,14 @@ module.exports = (sequelize, DataTypes) => {
       });
       Course.belongsToMany(models.User, {
         through: models.Class,
-        foreignKey: 'StudentId',
+        foreignKey: 'CourseId',
         as : 'students'
       });
     }
   }
   Course.init({
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.TEXT,
     image: DataTypes.STRING,
     duration: DataTypes.INTEGER,
     category: DataTypes.STRING,
