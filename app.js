@@ -1,23 +1,25 @@
 const express = require('express')
 const session = require('express-session')
 const app = express()
-const port = 3000
 const router = require('./router/index')
+
+let session = require('express-session')
+const port = 3000
+
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
 
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'rahasia',
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: { 
-    secure: true,
-    sameSite: true 
+    secure: false,
+    sameSite: true
   }
 }))
-
 
 app.use(router)
 

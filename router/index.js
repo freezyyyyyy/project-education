@@ -8,23 +8,48 @@ const course = require('./course');
 
 
 router.get('/', userController.home)
+
+router.get('/login', userController.login);
+router.post('/login', userController.postLogin);
+router.get('/logout', userController.logout);
 router.get('/register/student', userController.registerStudent)
 router.get('/register/teacher', userController.registerTeacher)
-router.get('/login', userController.login);
 
 router.use((req, res, next) => {
-    console.log(req.session.userId)
-    next()
-})
+    if(!req.session.userId){
+        const error = 'Login first'
+        res.redirect(`/login?error=${error}`)
+    }else{
+         next()
+    }
+  })
+
+const student =  function (req, res, next){
+    if(req.session.userId && req.session.role == 'student'){
+        next()
+    }else{
+        const error = 'just student can be accses '
+        res.redirect(`/login?error=${error}`)
+    }
+  }
+
+  const teacher =  function (req, res, next){
+    if(req.session.userId && req.session.role == 'teacher'){
+        next()
+    }else{
+        const error = 'just teacher can be accses '
+        res.redirect(`/login?error=${error}`)
+    }
+  }
 
 router.get('/dashboard/:id', userController.dashboard);
 router.use('/course', course);
 router.post('/register', userController.createUser)
 router.get('/teacher/:id',userController.viewTeacher)
-router.get('/teacher/:id/add', userController.addCourse)
+router.get('/teacher/:id/add', teacher, userController.addCourse)
 router.post('/teacher/:id/add', userController.createCourse)
 router.get('/student/:id',userController.viewStudent)
-router.get('/student/:id/edit',userController.editStudent)
+router.get('/student/:id/edit',student,userController.editStudent)
 router.post('/student/:id/edit',userController.updateStudent)
 
 
