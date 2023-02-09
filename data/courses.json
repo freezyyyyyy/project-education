@@ -9,7 +9,7 @@
     },
     {
         "name" : "Fluida",
-        "description": "Buoyancy",
+        "description": "Fluid is any liquid or gas or any material that is unable to withstand a shearing or tangential force, when at rest.",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Physics",
@@ -17,7 +17,7 @@
     },
     {
         "name" : "Acid",
-        "description": "Buoyancy",
+        "description": "An acid is a proton donor. While a base is a proton acceptor. Acetic acid (CH3COOH) and sulphuric acid are two examples of Acid. Sodium Hydroxide (NaOH) and Ammonia are two examples of Bases.",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Chemistry",
