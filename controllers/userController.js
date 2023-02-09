@@ -130,6 +130,18 @@ class UserController {
         })
         .then(()=>res.redirect(`/student/${id}`))
         .catch(e=>req.send(e))
+
+    static selectCourses(req, res){
+        Course.findAll().then(courses => {
+            res.render('selectCourse', {courses});
+        }
+        ).catch(err => {
+            res.send(err);
+        });
+    }
+
+    static unenRoll(req, res){
+
     }
 }
 
