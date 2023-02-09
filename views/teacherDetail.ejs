@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Teacher</title>
+</head>
+<body>
+    <header>
+        Ruang Lucu
+    </header>
+
+    <main>
+        <% let {id,username,role,lectures,Profile} = teacher[0] %>
+        <h1> <%= `${Profile.firstName} ${Profile.lastName}`%></h1>
+        <p> <%= username %> </p>
+        <h2> <%= `${Profile.university} - ${Profile.degree}` %></h2>
+        <p>Asal <%= Profile.city %></p>
+
+        <table border="1">
+            <tr>
+              <th>No.</th>
+              <th>Topic</th>
+              <th>Detail Topic</th>
+              <th>Category</th>
+              <th>Duration</th>
+              <th>action</th>
+
+            </tr>
+            <% lectures.forEach((el,index) => { %>
+                <tr>
+                  <td><%= ++index %></td>
+                  <td><%= el.name %></td>
+                  <td><%= el.description %></td>
+                  <td><%= el.category %></td>
+                  <td><%= el.duration %></td>
+                  <td>
+                    gabisa delete
+                    </td>
+                </tr>
+            <% }) %>
+          </table>
+
+          <a href="/teacher/<%= id %>/add"> add Course </a>
+        
+    </main>
+</body>
+</html>

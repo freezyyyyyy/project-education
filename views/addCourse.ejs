@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Course</title>
+</head>
+<body>
+    <header> RuangLucu </header>
+    <main>
+        <% let {id,role, username} = user %>
+        <h1>create course</h1>
+        <h2></h2>
+
+        <form action="/teacher/<%= id %>/add" method="post">
+          
+            <p>Topic
+                <input type="text" name="name">
+            </p>
+            <p>Description
+                <input type="text" name="description">
+            </p>
+            <p>image
+                <input type="text" name="image">
+            </p>
+            <p> duration
+                <input type="number" name="duration">
+            </p>
+            <p> Category
+                <input type="text" name="category">
+            </p>
+          
+            <input type="submit" value="Register">
+        </form>
+    </main>
+    
+</body>
+</html>
