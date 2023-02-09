@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <header> RuangLucu </header>
+    <main>
+        <h1>Login dulu Maniess!!!</h1>
+        <p>Username
+            <input type="text" name="userName">
+        </p>
+        <P> Pasword
+            <input type="password" name="password">
+        </P>
+        <p>
+             Role of Founder
+                <% ["Hacker","Hipster","Hustler"].forEach(el => { %>
+                    <input type="radio" name="roleOfFounder" value="<%= el %>"><%= el %> 
+                <% }) %>
+        </p>
+
+        <input type="submit" value="Login">
+    </main>
+    
+</body>
+</html>

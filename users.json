@@ -1,0 +1,37 @@
+[
+  {
+    "id":1,
+    "username": "user1",
+    "password": "user12345",
+    "email": "user1@gmail",
+    "role": "student"
+  },
+  {
+    "id":2,
+    "username": "user2",
+    "password": "user12345",
+    "email": "user2@gmail",
+    "role": "student"
+  },
+  {
+    "id":3,
+    "username": "user3",
+    "password": "user12345",
+    "email": "user3@gmail",
+    "role": "student"
+  },
+  {
+    "id":4,
+    "username": "teacher1",
+    "password": "teacher12345",
+    "email": "teacher1@gmail",
+    "role": "teacher"
+  },
+  {
+    "id":5,
+    "username": "teacher2",
+    "password": "teacher2345",
+    "email": "teacher2@gmail",
+    "role": "teacher"
+  }
+]
