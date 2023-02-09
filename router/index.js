@@ -8,6 +8,7 @@ const course = require('./course');
 
 
 router.get('/', userController.home)
+
 router.get('/login', userController.login);
 router.post('/login', userController.postLogin);
 router.get('/logout', userController.logout);
@@ -52,6 +53,6 @@ router.get('/student/:id/edit',student,userController.editStudent)
 router.post('/student/:id/edit',userController.updateStudent)
 
 
-router.use('/course',course)
+router.use('/dashboard/course',course)
 
 module.exports= router;

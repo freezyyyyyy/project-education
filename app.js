@@ -1,4 +1,5 @@
 const express = require('express')
+const session = require('express-session')
 const app = express()
 const router = require('./router/index')
 
@@ -9,6 +10,7 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
+
 app.use(session({
   secret: 'rahasia',
   resave: false,
@@ -18,6 +20,7 @@ app.use(session({
     sameSite: true
   }
 }))
+
 app.use(router)
 
 app.listen(port, () => {

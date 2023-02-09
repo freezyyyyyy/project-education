@@ -14,7 +14,6 @@
             max-height: auto;
             max-width: 300px;
             padding: 2px 16px;
-            margin: auto;
 
         }
         .card {
@@ -36,12 +35,37 @@
             padding: 2px 16px;
             margin: auto;
         }
-        
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #609EA2;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #C92C6D;
+        } 
+
     </style>
 </head>
 <body>
-    <h2>Dashboard</h2>
-    <a href="/logout">Log out</a>
+
+    <%- include('./assets/navbar.ejs') %>
+    
     <div class="profile">
         <% if (user.role == 'teacher') { %>
             <a href="/teacher/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
@@ -51,9 +75,9 @@
         <% } %>
         <% if (user.role == 'student') { %>
             <a href="/student/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
-
             <%= user.role %> <br>
         <% } %>
+        Age : <%= user.details.age %> <br>
         <%= user.details.school %> <br>
     </div><br>
 
@@ -68,7 +92,7 @@
                     <h3><%= course.name %></h3>
                     <p>Category : <%= course.category %></p>
                     <p>Duration : <%= course.duration %></p>
-                    <a href="course/details/<%=course.id%>">See Course</a>
+                    <a href="/dashboard/course/details/<%=course.id%>">See Course</a>
                 </div>
                 
             </div>

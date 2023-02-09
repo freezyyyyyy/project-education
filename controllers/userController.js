@@ -7,6 +7,7 @@ class UserController {
     static home(req,res){
         res.redirect('/login')
     }
+    
     static login(req, res) {
         const {error} =req.query
         res.render('login',{error})
@@ -36,12 +37,13 @@ class UserController {
             }
         })
         .catch(e=>res.send(e))
-        
-
+     
     }
+
     static registerStudent(req, res) {
         res.render('registrasiStudent')
     }
+
     static registerTeacher(req, res) {
         res.render('registrasiTeacher')
     }
@@ -169,16 +171,21 @@ class UserController {
             where:{'UserId':`${id}`}
         })
         .then(()=>res.redirect(`/student/${id}`))
+
         .catch(e=>res.send(e))
    }
 
     static selectCourses(req, res){
         Course.findAll().then(courses => {
             res.render('selectCourse', {courses});
-        }
-        ).catch(err => {
+        }).catch(err => {
             res.send(err);
         });
+    }
+
+    static enroll(req, res){
+        {  }
+        res.send('hehe');
     }
 
     static unenRoll(req, res){
