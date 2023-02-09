@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Profile.belongsTo(models.User)
     }
+
+    get age(){
+      return this.dateOfBirth.getFullYear() - new Date().getFullYear();
+    }
   }
   Profile.init({
     firstName: DataTypes.STRING,
