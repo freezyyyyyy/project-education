@@ -2,17 +2,17 @@ const { Class, User, Course, Profile } = require('../models');
 
 class UserController {
     static login(req, res) {
-        User.findAll({
-            include: ['lectures']
-        }).then(result => {
-            res.send(result)
-        }).catch(err => {
-            res.send(err)
-        });
-        // res.render('login')
+        res.render('login')
     }
     static register(req, res) {
         res.render('registrasi')
+    }
+
+    static dashboard(req, res) {
+        User.findByPk(1, { include: ['courses', 'details'] })
+            .then(user => {
+                res.render('dashboard', {user});
+            })
     }
 }
 
