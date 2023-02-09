@@ -40,9 +40,10 @@ class UserController {
     }
 
     static viewTeacher(req,res){
-        const {id} = req.params
+        let {id} = req.params
+        id = +id
         User.findAll({
-            include: [Profile,'lectures'],
+            include: ["details",'lectures'],
             where:{
                 id,
                 'role': 'teacher',
@@ -51,6 +52,7 @@ class UserController {
         .then(teacher=> {  
             if(teacher.length === 0) throw ('teacher not found');
             res.render('teacherDetail',{teacher})
+            // res.send(teacher)
         })
         .catch(e=>res.send(e))
     }
