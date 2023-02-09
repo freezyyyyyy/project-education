@@ -8,11 +8,12 @@ const course = require('./course');
 
 
 router.get('/', userController.home)
+router.post('/register', userController.createUser)
+router.get('/register/student', userController.registerStudent)
+router.get('/register/teacher', userController.registerTeacher)
 router.get('/login', userController.login);
 router.post('/login', userController.postLogin);
 router.get('/logout', userController.logout);
-router.get('/register/student', userController.registerStudent)
-router.get('/register/teacher', userController.registerTeacher)
 
 router.use((req, res, next) => {
     if(!req.session.userId){
@@ -42,8 +43,7 @@ const student =  function (req, res, next){
   }
 
 router.get('/dashboard/:id', userController.dashboard);
-router.use('/course', course);
-router.post('/register', userController.createUser)
+router.use('/dashboard/course', course);
 router.get('/teacher/:id',userController.viewTeacher)
 router.get('/teacher/:id/add', teacher, userController.addCourse)
 router.post('/teacher/:id/add', userController.createCourse)

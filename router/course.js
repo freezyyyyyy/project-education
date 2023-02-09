@@ -3,8 +3,9 @@
 const course = require('express').Router();
 const UserController = require('../controllers/userController');
 
-course.get('/enroll', UserController.selectCourses);
-course.get('/enroll/:userId/:courseId', UserController.selectCourses);
-course.get('/details/:courseId', UserController.courseDetail);
+course.get('/:id/enroll', UserController.selectCourses);
+course.get('/:id/enroll/:courseId', UserController.enroll);
+course.get('/:id/details/:courseId', UserController.courseDetail);
+course.get('/:id/details/:courseId/unenroll', UserController.unenRoll);
 
 module.exports = course;
