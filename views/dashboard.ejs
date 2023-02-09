@@ -14,7 +14,6 @@
             max-height: auto;
             max-width: 300px;
             padding: 2px 16px;
-            margin: auto;
 
         }
         .card {
@@ -51,9 +50,9 @@
         <% } %>
         <% if (user.role == 'student') { %>
             <a href="/student/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
-
             <%= user.role %> <br>
         <% } %>
+        Age : <%= user.details.age %> <br>
         <%= user.details.school %> <br>
     </div><br>
 
@@ -68,7 +67,7 @@
                     <h3><%= course.name %></h3>
                     <p>Category : <%= course.category %></p>
                     <p>Duration : <%= course.duration %></p>
-                    <a href="course/details/<%=course.id%>">See Course</a>
+                    <a href="/dashboard/course/details/<%=course.id%>">See Course</a>
                 </div>
                 
             </div>

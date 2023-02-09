@@ -6,11 +6,18 @@ const userController = require('../controllers/userController');
 const { route } = require('./course');
 const course = require('./course');
 
+
 router.get('/', userController.home)
-router.get('/dashboard/:id', userController.dashboard);
 router.get('/register/student', userController.registerStudent)
 router.get('/register/teacher', userController.registerTeacher)
 router.get('/login', userController.login);
+
+router.use((req, res, next) => {
+    console.log(req.session.userId)
+    next()
+})
+
+router.get('/dashboard/:id', userController.dashboard);
 router.use('/course', course);
 router.post('/register', userController.createUser)
 router.get('/teacher/:id',userController.viewTeacher)
@@ -21,6 +28,6 @@ router.get('/student/:id/edit',userController.editStudent)
 router.post('/student/:id/edit',userController.updateStudent)
 
 
-router.use('/course',course)
+router.use('/dashboard/course',course)
 
 module.exports= router;
