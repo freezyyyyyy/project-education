@@ -35,12 +35,37 @@
             padding: 2px 16px;
             margin: auto;
         }
-        
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #609EA2;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #C92C6D;
+        } 
+
     </style>
 </head>
 <body>
-    <h2>Dashboard</h2>
-    <a href="">Log out</a>
+
+    <%- include('./assets/navbar.ejs') %>
+    
     <div class="profile">
         <% if (user.role == 'teacher') { %>
             <a href="/teacher/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 

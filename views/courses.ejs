@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Detail</title>
+    <link rel="stylesheet" href="./assets/navbar.css">
 </head>
 <body>
+    <%- include('./assets/navbar.ejs') %>
+    
     <% let { firstName, lastName, university } = course.teacher.details %>
     <h2><%= course.name %></h2> 
     <p> 
