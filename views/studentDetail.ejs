@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Student</title>
+</head>
+<body>
+    <header>
+        Ruang Lucu
+    </header>
+
+    <main>
+        <% let {id,username,role,courses,details} = student[0] %>
+        <h1> <%= `${details.firstName} ${details.lastName}`%></h1>
+        <p> <%= username %> </p>
+        <h2> <%= `${details.school}`%></h2>
+        <p>Nama depan : <%= details.firstName %></p>
+        <p>Nama belakang : <%= details.lastName %></p>
+        <p>Age : <%= details.dateOfBirth %></p>
+        <p>Asal kota : <%= details.city %></p>
+        <p>Asal sekolah: <%= details.schools %> </p>
+        <p>jumlah course yang diikuti : <%= courses.length %></p>
+
+        <a href="/student/<%= id %>/edit"> edit profile</a>
+
+
+
+        
+
+        
+    </main>
+</body>
+</html>

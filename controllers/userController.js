@@ -74,7 +74,8 @@ class UserController {
 
 
     static dashboard(req, res) {
-        User.findByPk(1, { include: ['courses', 'details'] })
+        const {id} = req.params
+        User.findByPk(id, { include: ['courses', 'details'] })
             .then(user => {
                 res.render('dashboard', { user });
             }).catch(err => {
@@ -92,6 +93,43 @@ class UserController {
             }).catch(err => {
                 res.send(err);
             })
+    }
+
+    static viewStudent(req,res){
+        const {id} = req.params
+        User.findAll({
+            include: ["details",'courses'],
+            where:{
+                id,
+                'role': 'student'
+            }
+        })
+        .then(student=> {  
+            if(student.length === 0) throw ('student not found');
+            res.render('studentDetail',{student})
+            
+        })
+        .catch(e=>res.send(e))
+        
+    }
+    static editStudent(req,res){
+        const {id} = req.params
+        Profile.findAll({
+            where:{
+                'UserId':`${id}`,
+            }
+        })
+        .then(student=> res.render('editStudent',{student}))
+        .catch(e=>res.send(e))
+    }
+    static updateStudent(req,res){
+        const{id} = req.params
+        const {firstName,lastName,dateOfBirth,city,school} = req.body
+        Profile.update({firstName,lastName,dateOfBirth,city,school},{
+            where:{'UserId':`${id}`}
+        })
+        .then(()=>res.redirect(`/student/${id}`))
+        .catch(e=>req.send(e))
     }
 }
 
