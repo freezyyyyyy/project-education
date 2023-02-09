@@ -1,0 +1,29 @@
+[
+    {
+      "firstName": "frezy",
+      "lastName": "novel",
+      "email": "user1@gmail",
+      "dateOfBirth": "student",
+      "school": "SMA 1 Jakarta",
+      "city": "jakarta",
+      "UserId": 1
+    },
+    {
+      "firstName": "malik",
+      "lastName": "musthofa",
+      "email": "user2@gmail",
+      "dateOfBirth": "student",
+      "school": "SMA 3 Bandung",
+      "city": "Bandung",
+      "UserId": 2
+    },
+    {
+      "firstName": "aul",
+      "lastName": "tamvan",
+      "email": "user3@gmail",
+      "dateOfBirth": "student",
+      "school": "SMA 1 Padang",
+      "city": "Padang",
+      "UserId": 3
+    }
+]

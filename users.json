@@ -1,0 +1,32 @@
+[
+  {
+    "username": "user1",
+    "pasword": "user12345",
+    "email": "user1@gmail",
+    "role": "student"
+  },
+  {
+    "username": "user2",
+    "pasword": "user12345",
+    "email": "user2@gmail",
+    "role": "student"
+  },
+  {
+    "username": "user3",
+    "pasword": "user12345",
+    "email": "user3@gmail",
+    "role": "student"
+  },
+  {
+    "username": "admin1",
+    "pasword": "admin12345",
+    "email": "admin1@gmail",
+    "role": "admin"
+  },
+  {
+    "username": "admin2",
+    "pasword": "admin2345",
+    "email": "admin2@gmail",
+    "role": "admin"
+  }
+]
