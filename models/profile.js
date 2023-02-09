@@ -1,4 +1,5 @@
 'use strict';
+const normalizeDate = require('../helper/normalizeDate')
 const {
   Model
 } = require('sequelize');
@@ -8,8 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       Profile.belongsTo(models.User)
     }
 
+    get formattedDate(){
+      return normalizeDate(this.dateOfBirth);
+    }
+
     get age(){
-      return this.dateOfBirth.getFullYear() - new Date().getFullYear();
+      return new Date().getFullYear() - this.dateOfBirth.getFullYear();
     }
   }
   Profile.init({

@@ -5,7 +5,7 @@
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Mathematics",
-        "TeacherId":1
+        "TeacherId":4
     },
     {
         "name" : "Fluida",
@@ -13,7 +13,7 @@
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Physics",
-        "TeacherId":2
+        "TeacherId":4
     },
     {
         "name" : "Acid",
@@ -21,6 +21,6 @@
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Chemistry",
-        "TeacherId":3
+        "TeacherId":5
     }
 ]

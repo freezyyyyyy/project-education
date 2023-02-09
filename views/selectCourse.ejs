@@ -41,8 +41,20 @@
 </head>
 <body>
     <h1>Enroll to a course</h1>
-    <div>Sort berdasarkan waktu : <a href="">terlama</a> | <a href="">terpendek</a></div>
-    <div>Filter</div>
+    <div>Sort by : <a href="/course/<%= id %>/enroll/?sort=name">name</a> | <a href="/course/<%= id %>/enroll/?sort=duration">duration</a></div>
+    <div>Filter
+
+        <form action="/course/<%= id %>/enroll" method="get">
+            <select name="filter">
+                <option value="" selected disabled>Filter Subjects</option>
+                <% ['Physics', 'Chemistry', 'Mathematics'].forEach(subject => { %>
+                    <option value="<%= subject %>"><%= subject %></option>
+                <% }) %>
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+        
+    </div>
 
     <div class="container">
         <% courses.forEach(course => { %>
@@ -53,7 +65,7 @@
                     <h3><%= course.name %> </h3>
                     <p><%= course.category %></p>
                     <p><%= course.duration %></p>
-                    <a href="">enroll</a>
+                    <a href="/dashboard/course/<%= id %>/enroll/<%= course.id %>">enroll</a>
                 </div>
                
             </div>

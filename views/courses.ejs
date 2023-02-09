@@ -9,15 +9,19 @@
 <body>
     <% let { firstName, lastName, university } = course.teacher.details %>
     <h2><%= course.name %></h2> 
+
+    <% if (course.teacher.role === 'teacher') { %>
+        <p>Mentor : <%= firstName %> <%= lastName %> (<%= university %>)</p>
+        
+    <% } %>
     <p> 
         <a href="/teacher/<%= course.TeacherId %>"> detail teacher</a>
     </p>
-    <p>Mentor : <%= firstName %> <%= lastName %> (<%= university %>)</p>
 
     <div style="padding: 50px;">
         <p style="white-space: pre-line;"><%= course.description %></p>
     </div>
     
-    <a href="">Unenroll</a>
+    <a href="/dashboard/course/<%= id %>/details/<%= course.id %>/unenroll">Unenroll</a>
 </body>
 </html>
