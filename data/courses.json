@@ -1,7 +1,7 @@
 [
     {
         "name" : "Trigonometry",
-        "description": "sin(30) = opposite side / 8",
+        "description": "Here's a basic example of how trigonometry can be used to solve a problem:\nSuppose you have a right triangle with one angle measuring 30 degrees and one side measuring 8 units. You want to find the length of the other two sides.\nBy using the trigonometric functions, you can find the ratios of the sides of the triangle with respect to the angles. For this particular triangle, the sine of 30 degrees is 0.5, the cosine of 30 degrees is √3/2, and the tangent of 30 degrees is √3/3.\nUsing the sine function, you can find the length of the side opposite the 30-degree angle:\nsin(30) = opposite side / 8\n0.5 = opposite side / 8\nopposite side = 4\nUsing the cosine function, you can find the length of the side adjacent to the 30-degree angle:\ncos(30) = adjacent side / 8\n√3/2 = adjacent side / 8\nadjacent side = 4√3/2\nSo, in this example, the two sides of the triangle are 4 units and 4√3/2 units.\n",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
         "duration":360,
         "category":"Mathematics",
