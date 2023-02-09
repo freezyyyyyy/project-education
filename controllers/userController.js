@@ -28,6 +28,19 @@ class UserController {
                 res.send(err);
             })
     }
+
+    static selectCourses(req, res){
+        Course.findAll().then(courses => {
+            res.render('selectCourse', {courses});
+        }
+        ).catch(err => {
+            res.send(err);
+        });
+    }
+
+    static unenRoll(req, res){
+
+    }
 }
 
 module.exports = UserController
