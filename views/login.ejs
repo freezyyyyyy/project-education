@@ -10,20 +10,23 @@
     <header> Ruang Lucu </header>
     <main>
         <h1>Login dulu Maniess!!!</h1>
-        <p>Username
-            <input type="text" name="userName">
-        </p>
-        <P> Pasword
-            <input type="password" name="password">
-        </P>
-        <p>
-             Choose role
-                <% ["student","teacher"].forEach(el => { %>
-                    <input type="radio" name="roleOfFounder" value="<%= el %>"><%= el %> 
-                <% }) %>
-        </p>
 
-        <input type="submit" value="Login">
+        <% if (error) { %>
+         <p style="color: red;">
+            <%= error %>
+         </p>
+        <% } %>
+
+        <form action="/login" method="post">
+            <p>Username
+                <input type="text" name="username">
+            </p>
+            <P> Pasword
+                <input type="password" name="password">
+            </P>
+    
+            <input type="submit" value="Login">
+        </form>
         <br>
         <br>
         <p>

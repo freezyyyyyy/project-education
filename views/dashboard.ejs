@@ -41,7 +41,7 @@
 </head>
 <body>
     <h2>Dashboard</h2>
-    <a href="">Log out</a>
+    <a href="/logout">Log out</a>
     <div class="profile">
         <% if (user.role == 'teacher') { %>
             <a href="/teacher/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 

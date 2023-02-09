@@ -1,4 +1,6 @@
 const { Class, User, Course, Profile } = require('../models');
+const bcrypt = require('bcryptjs');
+
 
 class UserController {
 
@@ -6,7 +8,35 @@ class UserController {
         res.redirect('/login')
     }
     static login(req, res) {
-        res.render('login')
+        const {error} =req.query
+        res.render('login',{error})
+
+    }
+    static postLogin(req, res) {
+        const {username,password} = req.body
+        console.log(req.body);
+        User.findOne({where:{username}})
+        .then(user=>{
+    
+            if(user) {
+                const validPass = bcrypt.compareSync(user.password, password);
+                if(validPass|| password == user.password){
+
+                    req.session.userId = user.id ; 
+                    req.session.role = user.role ; 
+
+                    return res.redirect(`/dashboard/${user.id}`)
+                }else{
+                    const error = "Invalid Password"
+                    res.redirect(`/login?error=${error}`)
+                }
+            }else{
+                const error = "Invalid Username"
+                    res.redirect(`/login?error=${error}`)
+            }
+        })
+        .catch(e=>res.send(e))
+        
 
     }
     static registerStudent(req, res) {
@@ -14,6 +44,16 @@ class UserController {
     }
     static registerTeacher(req, res) {
         res.render('registrasiTeacher')
+    }
+
+    static logout(req,res){
+        req.session.destroy(err=>{
+            if(err){
+                res.send(err)
+            }else{
+                res.redirect('/login')
+            }
+        })
     }
 
     static createUser(req,res){
@@ -129,7 +169,7 @@ class UserController {
             where:{'UserId':`${id}`}
         })
         .then(()=>res.redirect(`/student/${id}`))
-        .catch(e=>req.send(e))
+        .catch(e=>res.send(e))
     }
 }
 
