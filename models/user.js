@@ -6,12 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
       User.hasOne(models.Profile, {
-        foreignKey: 'UserId'
+        foreignKey: 'UserId',
+        as: 'details'
         })
+
       User.hasMany(models.Course, {
         foreignKey: 'TeacherId',
         as: 'lectures'
       })
+
       User.belongsToMany(models.Course, {
         through: models.Class,
         foreignKey: 'StudentId',
