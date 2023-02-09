@@ -2,56 +2,51 @@
     {
       "firstName": "frezy",
       "lastName": "novel",
-      "email": "user1@gmail",
       "dateOfBirth": "2000-02-20",
       "school": "SMA 1 Jakarta",
       "city": "jakarta",
       "degree":"-",
-      "unversity":"-",
+      "university":"-",
       "UserId": 1
     },
     {
       "firstName": "malik",
       "lastName": "musthofa",
-      "email": "user2@gmail",
       "dateOfBirth": "2001-01-22",
       "school": "SMA 3 Bandung",
       "city": "Bandung",
       "degree":"-",
-      "unversity":"-",
+      "university":"-",
       "UserId": 2
     },
     {
       "firstName": "aul",
       "lastName": "tamvan",
-      "email": "user3@gmail",
       "dateOfBirth": "2001-02-02",
       "school": "SMA 1 Padang",
       "city": "Padang",
       "degree":"-",
-      "unversity":"-",
+      "university":"-",
       "UserId": 3
     },
     {
         "firstName": "mas",
         "lastName": "bagas",
-        "email": "user3@gmail",
         "dateOfBirth": "1995-10-29",
         "school": "-",
         "city": "-",
         "degree":"S1",
-        "unversity":"UGM",
+        "university":"UGM",
         "UserId": 4
       },
       {
         "firstName": "mas",
         "lastName": "syahrian",
-        "email": "user3@gmail",
         "dateOfBirth": "1996-11-09",
         "school": "-",
         "city": "-",
         "degree":"S2",
-        "unversity":"UI",
+        "university":"UI",
         "UserId": 5
       }
 ]

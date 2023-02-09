@@ -3,24 +3,24 @@
         "name" : "Trigonometry",
         "description": "sin(30) = opposite side / 8",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
-        "duration":"360",
+        "duration":360,
         "category":"Mathematics",
-        "TeacherId": "1"
+        "TeacherId":1
     },
     {
         "name" : "Fluida",
         "description": "Buoyancy",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
-        "duration":"360",
+        "duration":360,
         "category":"Physics",
-        "TeacherId": "2"
+        "TeacherId":2
     },
     {
         "name" : "Acid",
         "description": "Buoyancy",
         "image": "https://i.ytimg.com/vi/DCHplQH-xGU/maxresdefault.jpg",
-        "duration":"360",
+        "duration":360,
         "category":"Chemistry",
-        "TeacherId": "3"
+        "TeacherId":3
     }
 ]
