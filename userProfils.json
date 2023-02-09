@@ -6,6 +6,8 @@
       "dateOfBirth": "student",
       "school": "SMA 1 Jakarta",
       "city": "jakarta",
+      "degree":"-",
+      "unversity":"-",
       "UserId": 1
     },
     {
@@ -15,6 +17,8 @@
       "dateOfBirth": "student",
       "school": "SMA 3 Bandung",
       "city": "Bandung",
+      "degree":"-",
+      "unversity":"-",
       "UserId": 2
     },
     {
@@ -24,6 +28,30 @@
       "dateOfBirth": "student",
       "school": "SMA 1 Padang",
       "city": "Padang",
+      "degree":"-",
+      "unversity":"-",
       "UserId": 3
-    }
+    },
+    {
+        "firstName": "mas",
+        "lastName": "bagas",
+        "email": "user3@gmail",
+        "dateOfBirth": "student",
+        "school": "-",
+        "city": "-",
+        "degree":"S1",
+        "unversity":"UGM",
+        "UserId": 4
+      },
+      {
+        "firstName": "mas",
+        "lastName": "syahrian",
+        "email": "user3@gmail",
+        "dateOfBirth": "student",
+        "school": "-",
+        "city": "-",
+        "degree":"S2",
+        "unversity":"UI",
+        "UserId": 5
+      }
 ]
