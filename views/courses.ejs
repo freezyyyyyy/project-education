@@ -8,7 +8,10 @@
 </head>
 <body>
     <% let { firstName, lastName, university } = course.teacher.details %>
-    <h2><%= course.name %></h2>
+    <h2><%= course.name %></h2> 
+    <p> 
+        <a href="/teacher/<%= course.TeacherId %>"> detail teacher</a>
+    </p>
     <p>Mentor : <%= firstName %> <%= lastName %> (<%= university %>)</p>
 
     <div style="padding: 50px;">

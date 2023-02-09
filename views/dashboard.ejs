@@ -43,8 +43,17 @@
     <h2>Dashboard</h2>
     <a href="">Log out</a>
     <div class="profile">
-        <a href=""><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
-        <%= user.role %> <br>
+        <% if (user.role == 'teacher') { %>
+            <a href="/teacher/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
+            <p>
+                you are theacher, klick for show your profile
+            </p>
+        <% } %>
+        <% if (user.role == 'student') { %>
+            <a href="/student/<%= user.id %>"><b><%= user.details.firstName %> <%= user.details.lastName %></b><br></a> 
+
+            <%= user.role %> <br>
+        <% } %>
         <%= user.details.school %> <br>
     </div><br>
 

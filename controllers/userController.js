@@ -40,9 +40,10 @@ class UserController {
     }
 
     static viewTeacher(req,res){
-        const {id} = req.params
+        let {id} = req.params
+        id = +id
         User.findAll({
-            include: [Profile,'lectures'],
+            include: ["details",'lectures'],
             where:{
                 id,
                 'role': 'teacher',
@@ -51,6 +52,7 @@ class UserController {
         .then(teacher=> {  
             if(teacher.length === 0) throw ('teacher not found');
             res.render('teacherDetail',{teacher})
+            // res.send(teacher)
         })
         .catch(e=>res.send(e))
     }
@@ -72,7 +74,8 @@ class UserController {
 
 
     static dashboard(req, res) {
-        User.findByPk(1, { include: ['courses', 'details'] })
+        const {id} = req.params
+        User.findByPk(id, { include: ['courses', 'details'] })
             .then(user => {
                 res.render('dashboard', { user });
             }).catch(err => {
@@ -91,6 +94,42 @@ class UserController {
                 res.send(err);
             })
     }
+
+    static viewStudent(req,res){
+        const {id} = req.params
+        User.findAll({
+            include: ["details",'courses'],
+            where:{
+                id,
+                'role': 'student'
+            }
+        })
+        .then(student=> {  
+            if(student.length === 0) throw ('student not found');
+            res.render('studentDetail',{student})
+            
+        })
+        .catch(e=>res.send(e))
+        
+    }
+    static editStudent(req,res){
+        const {id} = req.params
+        Profile.findAll({
+            where:{
+                'UserId':`${id}`,
+            }
+        })
+        .then(student=> res.render('editStudent',{student}))
+        .catch(e=>res.send(e))
+    }
+    static updateStudent(req,res){
+        const{id} = req.params
+        const {firstName,lastName,dateOfBirth,city,school} = req.body
+        Profile.update({firstName,lastName,dateOfBirth,city,school},{
+            where:{'UserId':`${id}`}
+        })
+        .then(()=>res.redirect(`/student/${id}`))
+        .catch(e=>req.send(e))
 
     static selectCourses(req, res){
         Course.findAll().then(courses => {

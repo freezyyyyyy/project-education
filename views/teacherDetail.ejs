@@ -12,11 +12,11 @@
     </header>
 
     <main>
-        <% let {id,username,role,lectures,Profile} = teacher[0] %>
-        <h1> <%= `${Profile.firstName} ${Profile.lastName}`%></h1>
+        <% let {id,username,role,lectures,details} = teacher[0] %>
+        <h1> <%= `${details.firstName} ${details.lastName}`%></h1>
         <p> <%= username %> </p>
-        <h2> <%= `${Profile.university} - ${Profile.degree}` %></h2>
-        <p>Asal <%= Profile.city %></p>
+        <h2> <%= `${details.university} - ${details.degree}` %></h2>
+        <p>Asal <%= details.city %></p>
 
         <table border="1">
             <tr>
@@ -25,7 +25,7 @@
               <th>Detail Topic</th>
               <th>Category</th>
               <th>Duration</th>
-              <th>action</th>
+            
 
             </tr>
             <% lectures.forEach((el,index) => { %>
@@ -35,9 +35,6 @@
                   <td><%= el.description %></td>
                   <td><%= el.category %></td>
                   <td><%= el.duration %></td>
-                  <td>
-                    gabisa delete
-                    </td>
                 </tr>
             <% }) %>
           </table>
