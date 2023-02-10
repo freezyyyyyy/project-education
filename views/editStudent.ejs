@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header> RuangLucu </header>
     <main>
-        <%- include('./partials/navbar') %>
-        <h1>Edit Student</h1>
         <% let {firstName,lastName,dateOfBirth,school,city,UserId} = student[0] %>
+        <ul>
+            <li><a href="/dashboard/<%= UserId %>">Dashboard</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+
+        <h1>Edit Student</h1>
+        
         <form action="/student/<%= UserId %>/edit" method="post">
         
             <p>First Name

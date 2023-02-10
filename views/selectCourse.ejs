@@ -16,7 +16,7 @@
         <form action="/course/<%= id %>/enroll" method="get">
             <select name="filter">
                 <option value="" selected disabled>Filter Subjects</option>
-                <% ['Physics', 'Chemistry', 'Mathematics'].forEach(subject => { %>
+                <% ['Physics', 'Chemistry', 'Mathematics', 'Computer Science'].forEach(subject => { %>
                     <option value="<%= subject %>"><%= subject %></option>
                 <% }) %>
             </select>

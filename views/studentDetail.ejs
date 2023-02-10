@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        Ruang Lucu
-    </header>
-
+    <% let {id,username,role,courses,details} = student[0] %>
+    <ul>
+        <li><a href="/dashboard/<%= id %>">Dashboard</a></li>
+        <li><a href="/logout">Log out</a></li>
+    </ul>
+    
     <main>
-        <% let {id,username,role,courses,details} = student[0] %>
+        
         <h1> <%= `${details.firstName} ${details.lastName}`%></h1>
         <p> <%= username %> </p>
         <h2> <%= `${details.school}`%></h2>
