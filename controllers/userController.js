@@ -19,7 +19,7 @@ class UserController {
             .then(user => {
 
                 if (user) {
-                    const validPass = bcrypt.compareSync(user.password, password);
+                    const validPass = bcrypt.compareSync(password, user.password);
                     if (validPass || password == user.password) {
 
                         req.session.userId = user.id;

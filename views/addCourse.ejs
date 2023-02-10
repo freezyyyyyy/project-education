@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <%- include('./partials/navbar') %>
-    <header> RuangLucu </header>
+    <% let {id,role, username} = user %>
+
+    <ul>
+        <li><a href="/dashboard/<%= id %>">Dashboard</a></li>
+        <li><a href="/logout">Log out</a></li>
+    </ul>
     <main>
-        <% let {id,role, username} = user %>
+        
         <h1>create course</h1>
         <h2></h2>
 
@@ -30,7 +34,11 @@
                 <input type="number" name="duration">
             </p>
             <p> Category
-                <input type="text" name="category">
+                <select name="category">
+                    <% ['Physics', 'Mathematics', 'Chemistry', 'Computer Science'].forEach(category => { %>
+                        <option value="<%= category %>"><%= category %></option>
+                    <% }) %>
+                </select>
             </p>
           
             <input type="submit" value="Register">

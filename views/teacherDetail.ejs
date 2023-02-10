@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Teacher</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        Ruang Lucu
-    </header>
-
+  <% let {id,username,role,lectures,details} = teacher[0] %>
+  <ul>
+    <li><a href="/dashboard/<%= id %>">Dashboard</a></li>
+    <li><a href="/logout">Log out</a></li>
+</ul>
     <main>
-        <% let {id,username,role,lectures,details} = teacher[0] %>
         <h1> <%= `${details.firstName} ${details.lastName}`%></h1>
         <p> <%= username %> </p>
         <h2> <%= `${details.university} - ${details.degree}` %></h2>
